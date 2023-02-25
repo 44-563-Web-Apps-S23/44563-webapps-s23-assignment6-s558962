@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pullabhatla_Painter</title>
+    </head>
+ 
+<body>
+
+<h2>Painter entry SaiKrishna Pullabhatla</h2>
+
+<form>
+    <label for="painter"> The hidden painter name </label>
+    <input type ="password" id="painter" name="painter" value="Monet"> <br>
+    <label for="guessPainter">Guess the painter </label>
+    <input type ="text" id="guessPainter" name="guessPainter" autofocus> <br> <br>
+    <input type="button" onclick="checkPainter();" value="check the guess">
+</form>
+<p id="results">The count of good and oops guess </p>
+
+<script> 
+var good=0;
+var oops=0; 
+
+function checkPainter(){
+    console.log("Getting from values")
+    paintername = document.getElementById("painter").value
+    guesspaintername = document.getElementById("guessPainter").value
+    if(paintername == guesspaintername){
+        good = good + 1
+        alert("You got it right")
+        
+    }
+    else{ 
+        oops=oops+1
+        alert("Sorry")
+        
+    }
+    document.getElementById("results").innerHTML ="Good Guess : " + good + "\n Incorrect Guess : " + oops
+}
+</script>
+</body>
+</html> 
